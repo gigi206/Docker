@@ -20,10 +20,8 @@ MOUNT :
 * App/www           : Repertoire des applications
 
 GITHUB clone :
-```sh
 git init
 git remote add -f origin https://github.com/gigi206/docker/
 git config core.sparsecheckout true
 echo "Dockerfile/apache_php/*" >> .git/info/sparse-checkout
 git pull origin master
-```
