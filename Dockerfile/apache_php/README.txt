@@ -15,6 +15,6 @@ RUN :
 $ docker run -d -p <myport>:80 -p <myport>:443 -v $PWD/App/sites-enabled:/etc/apache2/sites-enabled -v $PWD/App/log:/var/log/apache -v $PWD/App/www:/var/www--name <container_name> --env-file ENV gigi206/apache2_php5:v1
 
 MOUNT :
-* App/log           : logs APache2
+* App/log           : logs Apache2
 * App/sites-enabled : vhosts
 * App/www           : Repertoire des applications
