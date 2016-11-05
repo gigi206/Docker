@@ -5,7 +5,8 @@ RUN apt-get update && \
 	apt-get -yq install \
 		apache2 \
 		libapache2-mod-php5 && \
-	 rm -rf /tmp/* /var/tmp/*
+	touch /etc/update-startup && \
+	rm -rf /tmp/* /var/tmp/*
 
 #USER root
 EXPOSE 80 443
@@ -15,7 +16,6 @@ WORKDIR /var/www
 CMD ["apache2", "-D", "FOREGROUND"]
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 COPY docker-entrypoint.sh /usr/local/bin/
-COPY update-startup /etc/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 COPY docker-entrypoint-initdb.d/ /docker-entrypoint-initdb.d/
 #HEALTHCHECK --interval=5m --timeout=3s \
