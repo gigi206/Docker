@@ -1,6 +1,7 @@
 # APACHE2 + PHP5
 
 ## VARS :
+* **APACHE2_START_ARG      :** Arguments pour le daemon Apache2
 * **INSTALL_PKGS           :** Paquets à installer (separés par une virgule)
 * **LOAD_MODULES_APACHE2   :** Module à charger dans Apache2 (separés par une virgule)
 * **UNLOAD_MODULES_APACHE2 :** Module à decharger d'Apache2 (separés par une virgule)
