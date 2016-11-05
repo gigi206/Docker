@@ -9,15 +9,21 @@
 
 ## BUILD :
 Si vous souhaitez construire votre image à partir des sources :
-    $ docker build -t gigi206/apache2_php5:v1 .
+```
+$ docker build -t gigi206/apache2_php5:v1 .
+```
 
 ## PULL :
 Si vous souhaitez télécharger l'image à partir du Docker HUB :
-    $ docker pull gigi206/apache2_php5
+```
+$ docker pull gigi206/apache2_php5
+```
 
 ## RUN : (Mettez à jour votre fichier ENV)
 Exemple pour lancer son conteneur :
-    $ docker run -d -p <myport>:80 -p <myport>:443 -v $PWD/App/sites-enabled:/etc/apache2/sites-enabled -v $PWD/App/log:/var/log/apache -v $PWD/App/www:/var/www --name <container_name> --env-file ENV gigi206/apache2_php5
+```
+$ docker run -d -p <myport>:80 -p <myport>:443 -v $PWD/App/sites-enabled:/etc/apache2/sites-enabled -v $PWD/App/log:/var/log/apache -v $PWD/App/www:/var/www --name <container_name> --env-file ENV gigi206/apache2_php5
+```
 
 Si vous montez les repertoire comme dans l'exemple ci-dessus :
 * **App/log           :** logs Apache2
@@ -29,8 +35,10 @@ Supprimer le fichier */etc/update-startup* pour désactiver les mises à jour au
 
 ## GITHUB clone :
 Si vous souhaitez cloner à partir de github :
-    git init
-    git remote add -f origin https://github.com/gigi206/docker/
-    git config core.sparsecheckout true
-    echo "Dockerfile/apache_php/*" >> .git/info/sparse-checkout
-    git pull origin master
+```
+git init
+git remote add -f origin https://github.com/gigi206/docker/
+git config core.sparsecheckout true
+echo "Dockerfile/apache_php/*" >> .git/info/sparse-checkout
+git pull origin master
+```
