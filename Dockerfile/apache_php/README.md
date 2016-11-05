@@ -19,15 +19,15 @@ Si vous souhaitez télécharger l'image à partir du Docker HUB :
 $ docker pull gigi206/apache2_php5
 ```
 
-## RUN : (Mettez à jour votre fichier ENV)
-Exemple pour lancer son conteneur :
+## RUN :
+Exemple pour lancer son conteneur (penser à mettre à jour votre fichier **ENV**) :
 ```
 $ docker run -d -p <myport>:80 -p <myport>:443 -v $PWD/App/sites-enabled:/etc/apache2/sites-enabled -v $PWD/App/log:/var/log/apache -v $PWD/App/www:/var/www --name <container_name> --env-file ENV gigi206/apache2_php5
 ```
 
-Si vous montez les repertoire comme dans l'exemple ci-dessus :
+Si vous montez les répertoires comme dans l'exemple ci-dessus :
 * **App/log           :** logs Apache2
-* **App/sites-enabled :** vhosts
+* **App/sites-enabled :** vhosts Apache2
 * **App/www           :** Répertoire des applications
 
 ## UPDATES :
