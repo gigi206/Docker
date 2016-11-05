@@ -19,6 +19,9 @@ MOUNT :
 * App/sites-enabled : vhosts
 * App/www           : Répertoire des applications
 
+UPDATES :
+* Supprimer le fichier /etc/update-startup pour désactiver les updates au boot du conteneur
+
 GITHUB clone :
 git init
 git remote add -f origin https://github.com/gigi206/docker/
