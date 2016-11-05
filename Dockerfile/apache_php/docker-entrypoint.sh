@@ -22,15 +22,15 @@ function STEP() {
 	printf "\033[0;36m\n>>> $1 <<<\033[0m\n"
 }
 
-function STOP() {
-	INFO "Stopping $PROGRAM"
-	killall $PROGRAM
-
-}
+#function STOP() {
+#	INFO "Stopping $PROGRAM"
+#	killall $PROGRAM
+#
+#}
 
 PROGRAM="apache2"
 
-trap STOP SIGTERM
+#trap STOP SIGTERM
 
 if [ "`echo $1 | awk '{ print $1 }'`" == "$PROGRAM" ]; then
 	[ -f /etc/apache2/envvars ] && source /etc/apache2/envvars
@@ -47,14 +47,14 @@ if [ "`echo $1 | awk '{ print $1 }'`" == "$PROGRAM" ]; then
 		esac
 	done
 
-	INFO "\n* Test Apache2 config"
-	CMD "apache2ctl configtest"
-	if [ "$?" -eq 0 ]; then
-		INFO "  Apache1 config OK"
-	else
-		WARN "  Problem in apache2 config !"
-		exit 1
-	fi
+	#INFO "\n* Test Apache2 config"
+	#CMD "apache2ctl configtest"
+	#if [ "$?" -eq 0 ]; then
+	#	INFO "  Apache1 config OK"
+	#else
+	#	WARN "  Problem in apache2 config !"
+	#	exit 1
+	#fi
 
 	# http://patorjk.com/software/taag/#p=display&f=Slant
 	INFO '

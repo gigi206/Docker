@@ -15,6 +15,7 @@ WORKDIR /var/www
 CMD ["apache2", "-D", "FOREGROUND"]
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 COPY docker-entrypoint.sh /usr/local/bin/
+COPY update-startup /etc/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 COPY docker-entrypoint-initdb.d/ /docker-entrypoint-initdb.d/
 #HEALTHCHECK --interval=5m --timeout=3s \
