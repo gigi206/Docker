@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  db:
+    image: mysql
+    volumes:
+      - $PWD/mysql:/var/lib/mysql:rw
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+  web:
+    image: gigi206/apache2_php5
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - db
+    volumes:
+      - $PWD/App/sites-enabled:/etc/apache2/sites-enabled:ro
+      - $PWD/App/log:/var/log/apache:rw
+      - $PWD/App/www:/var/www:rw
+    environment:
+      - APACHE2_START_ARG=-D SSL -D PHP5
+      - INSTALL_PKGS=php5-json php5-mysql
+      - LOAD_MODULES_APACHE2=ssl php5 vhost_alias
+      - LOAD_MODULES_PHP5=json mysql
