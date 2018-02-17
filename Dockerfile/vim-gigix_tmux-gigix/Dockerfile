@@ -3,7 +3,7 @@ MAINTAINER Ghislain LE MEUR <ghislain.lemeur@gmail.com>
 WORKDIR /root
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get -yq install vim-nox curl git cmake automake gcc g++ python python3-dev ncurses-term tmux zsh locales-all
+    apt-get -yq install vim-nox curl git cmake automake gcc g++ python python3-dev python-dev ncurses-term tmux zsh locales-all
 RUN /bin/bash -c "yes Y | bash <(curl http://raw.githubusercontent.com/gigi206/vim-gigix/master/install.sh -s -L -o -)"
 RUN /bin/bash -c "bash <(curl -fsSL http://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -s -L -o -)" && \
     curl http://raw.githubusercontent.com/gigi206/tmux-gigix/master/demo.zsh -s -L -o - > /root/.oh-my-zsh/custom/default.zsh && \
